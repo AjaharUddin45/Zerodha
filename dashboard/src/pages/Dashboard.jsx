@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Route, Routes } from "react-router-dom";
 
 import Apps from "./Apps.jsx";
@@ -9,15 +9,15 @@ import Positions from "./Positions.jsx";
 import Summary from "./Summary.jsx";
 
 import WatchList from "../components/WatchList.jsx";
-import { GeneralContextProvider } from "../context/GeneralContext.jsx";
+import  GeneralContextProvider  from "../context/GeneralContext.jsx";
 
 export default function  Dashboard(){
   return (
     <div className="dashboard-container">
       <GeneralContextProvider>
+        
         <WatchList />
-      </GeneralContextProvider>
-
+       </GeneralContextProvider>
       <div className="content">
         <Routes>
           <Route index element={<Summary />} />
@@ -29,6 +29,8 @@ export default function  Dashboard(){
         </Routes>
       </div>
     </div>
+   
+
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Menu from "../components/Menu.jsx";
+import Menu from "./Menu.jsx";
 
 export default function TopBar() {
   return (
