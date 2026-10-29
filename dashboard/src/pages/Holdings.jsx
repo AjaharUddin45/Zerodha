@@ -2,14 +2,13 @@ import  { useState, useEffect } from "react";
 import axios, { all } from "axios";
 import VerticalGraph from "../components/VerticalGraph.jsx";
 
-import { holdings } from "../data/data";
+// import { holdings } from "../data/data";
 
 export default function Holdings(){
-  const [allHoldings, setAllHoldings] = useState(holdings);
+  const [allHoldings, setAllHoldings] = useState([]);
 
    useEffect(() => {
-    axios
-      .get("http://localhost:3002/allHoldings")
+    axios.get("/allHoldings")
       .then((res) => setAllHoldings(res.data))
       .catch((err) => console.error("Could not load holdings:", err));
   }, []);
